@@ -1,25 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useDropdown from '../Dropdown';
 import './SportsNavBar.css';
 
 const SportsNavBar = ({ links, leagues }) => {
-    const [hoveredDropdown, setHoveredDropdown] = useState(null);
-    const hoverTimeoutRef = useRef(null);
-
-    const handleMouseEnterDropdown = (menuName) => () => {
-        clearTimeout(hoverTimeoutRef.current);
-        setHoveredDropdown(menuName);
-    };
-
-    const handleMouseLeaveDropdown = () => {
-        hoverTimeoutRef.current = setTimeout(() => {
-            setHoveredDropdown(null);
-        }, 75); 
-    };
-
-    useEffect(() => {
-        return () => clearTimeout(hoverTimeoutRef.current);
-    }, []);
+    const { hoveredDropdown, handleMouseEnterDropdown, handleMouseLeaveDropdown } = useDropdown();
 
     return (
         <div className="sports-navbar">
@@ -34,7 +19,7 @@ const SportsNavBar = ({ links, leagues }) => {
                 <div className="menu-item" onMouseEnter={handleMouseEnterDropdown('leagues')} onMouseLeave={handleMouseLeaveDropdown}>
                     Leagues
                     {hoveredDropdown === 'leagues' && (
-                        <div className="dropdown">
+                        <div className="dropdown-right">
                             <ul>
                                 {leagues.map((league, index) => (
                                     <li key={index}><Link to={league.to}>{league.label}</Link></li>
