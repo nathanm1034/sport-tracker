@@ -1,25 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useDropdown from '../Dropdown';
 import './NavBar.css';
 
 const NavBar = () => {
-    const [hoveredDropdown, setHoveredDropdown] = useState(null);
-    const hoverTimeoutRef = useRef(null);
-
-    const handleMouseEnterDropdown = (menuName) => () => {
-        clearTimeout(hoverTimeoutRef.current);
-        setHoveredDropdown(menuName);
-    };
-
-    const handleMouseLeaveDropdown = () => {
-        hoverTimeoutRef.current = setTimeout(() => {
-            setHoveredDropdown(null);
-        }, 75); 
-    };
-
-    useEffect(() => {
-        return () => clearTimeout(hoverTimeoutRef.current);
-    }, []);
+    const { hoveredDropdown, handleMouseEnterDropdown, handleMouseLeaveDropdown } = useDropdown();
 
     return (
         <nav className="navbar">

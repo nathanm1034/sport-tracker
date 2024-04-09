@@ -1,0 +1,72 @@
+.sports-navbar {
+    display: flex;
+    justify-content: space-between; /* Adjusted for spacing between links and the leagues dropdown */
+    align-items: center;
+    padding: 5px 50px;
+    background-color: #4A4A4A;
+    color: white;
+    height: 35px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: #5A5A5A;
+    color: #DDDDDD;
+}
+
+.dropdown-right {
+    position: absolute;
+    top: 155%; /* Align the top of the dropdown with the bottom of the menu-item */
+    left: -170%;
+    background-color: #c5c5c5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-right::before {
+    content: "";
+    position: absolute;
+    top: -12px; /* Position the arrow above the dropdown */
+    left: 125px; /* Adjust this value to position the arrow correctly under the "Sports" header */
+    border-left: 12px solid transparent; /* Creates the left side of the arrow */
+    border-right: 12px solid transparent; /* Creates the right side of the arrow */
+    border-bottom: 12px solid #c5c5c5; /* Creates the base of the arrow, should match the dropdown background color */
+    z-index: 2;
+}
+
+.dropdown-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-right ul li {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.dropdown-right ul li:hover {
+    background-color: #ddd;
+}
+
+.dropdown-right ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .sports-navbar {
+        padding: 5px 20px;
+    }
+}
