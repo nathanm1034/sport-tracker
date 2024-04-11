@@ -1,10 +1,8 @@
 const express = require('express');
 const app = express();
+const PORT = 3001;
+const pool = require('./config/db')
 
-app.get("/api", (req, res) => {
-    res.json({"users": ["userOne", "userTwo", "userThree"]});
-});
-
-app.listen(3001, () => {
-    console.log("Server started on part 3001");
+app.listen(PORT, () => {
+    console.log(`Server started on part ${PORT}`);
 });

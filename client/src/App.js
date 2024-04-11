@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import BasketballHomePage from './pages/BasketballPages/BasketballHomePage';
 import BasketballSchedule from './pages/BasketballPages/BasketballSchedule';
 import BasketballStandings from './pages/BasketballPages/BasketballStandings';
+import BasketballTeams from './pages/BasketballPages/BasketballTeams';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/basketball" element={<BasketballHomePage />}>
 						<Route path="schedule" element={<BasketballSchedule />} />
 						<Route path="standings" element={<BasketballStandings />} />
+						<Route path="teams" element={<BasketballTeams />} />
 					</Route>
 				</Routes>
 			</div>

@@ -13,10 +13,10 @@ const basketballLeagues = [
     { label: 'EuroLeague', to: '/basketball/euroleague' },
 ];
 
-const BasketballStandings = () => (
+const BasketballTeams = () => (
     <>
         <SportsNavBar links={basketballLinks} leagues={basketballLeagues} />
     </>
 );
 
-export default BasketballStandings;
+export default BasketballTeams;

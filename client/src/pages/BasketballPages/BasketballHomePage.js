@@ -5,6 +5,7 @@ const basketballLinks = [
     { label: 'Basketball Home', to: '/basketball' },
     { label: 'Schedule', to: '/basketball/schedule' },
     { label: 'Standings', to: '/basketball/standings' },
+    { label: 'Teams', to: '/basketball/teams'},
 ];
 
 const basketballLeagues = [
