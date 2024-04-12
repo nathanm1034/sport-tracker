@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import SportsPage from './pages/SportsPage';
 import HomePage from './pages/HomePage';
+import BasketballLayout from './pages/BasketballPages/BasketballLayout';
 import BasketballHomePage from './pages/BasketballPages/BasketballHomePage';
 import BasketballSchedule from './pages/BasketballPages/BasketballSchedule';
 import BasketballStandings from './pages/BasketballPages/BasketballStandings';
@@ -16,7 +17,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/others" element={<SportsPage />} />
-					<Route path="/basketball" element={<BasketballHomePage />}>
+					<Route path="/basketball" element={<BasketballLayout />}>
+						<Route index element={<BasketballHomePage />} />
 						<Route path="schedule" element={<BasketballSchedule />} />
 						<Route path="standings" element={<BasketballStandings />} />
 						<Route path="teams" element={<BasketballTeams />} />
